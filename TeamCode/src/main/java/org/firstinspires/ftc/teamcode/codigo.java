@@ -9,18 +9,26 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class codigo extends OpMode {
 
 
-    private DcMotor motor1;
+    private DcMotor intake;
 
     @Override
     public void init() {
 
-        motor1 = hardwareMap.get(DcMotor.class, "backleft");
+        intake = hardwareMap.get(DcMotor.class, "intake");
     }
 
     @Override
     public void loop() {
 
-        motor1.setPower(1);
+        if (gamepad1.left_trigger > 0.5) {
+
+        intake.setPower(1);
+
+        } else {
+            intake.setPower(0);
+        }
+
     }
 }
 
+//bom dia
