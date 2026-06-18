@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @TeleOp(name = "teste2")
 
@@ -24,6 +25,9 @@ public class codigo
         frontRightMotor = hardwareMap.get(DcMotor.class, "frontRight");
         backLeftMotor = hardwareMap.get(DcMotor.class, "backLeft");
         backRightMotor = hardwareMap.get(DcMotor.class, "backRight");
+
+        frontRightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+        backRightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 
     @Override
